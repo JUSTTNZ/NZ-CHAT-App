@@ -113,7 +113,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea{
 }
 
 .header--link{
-  color: #c7d8eb;
+  color: #f6f9fc;
   cursor: pointer;
   transition: 0.3s;
 }
