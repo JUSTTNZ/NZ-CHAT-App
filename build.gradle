@@ -1,0 +1,13 @@
+repositories {
+    mavenCentral()
+}
+
+implementation("io.appwrite:sdk-for-android:5.1.1")
+
+import io.appwrite.Client
+import io.appwrite.services.Account
+
+val client = Client(context)
+    .setEndpoint("https://cloud.appwrite.io/v1")
+    .setProject("668a822500216ef4b9a6")
+    .setSelfSigned(status: true) // For self signed certificates, only use for development
