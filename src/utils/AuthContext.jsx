@@ -60,10 +60,19 @@ export const AuthProvider = ({children}) => {
                 let response = await account.create(
                     ID.unique(),
                     credentials.email,
-                    credentials.password,
+                    credentials.password1,
                     credentials.name
                     )
                 console.log('REGISTERED:', response)
+                
+                await account.createEmailPasswordSession(
+                    credentials.email, 
+                    credentials.password1);
+                const accountDetails = await account.get();
+                console.log( 'accountdetails', accountDetails)
+                setUser(accountDetails)
+    
+                navigate('/')
         }catch(error){
             console.error(error)
         }
